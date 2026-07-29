@@ -19,8 +19,8 @@ So, I wrote this extension, to quickly move between these versions.
 ## Features
 It adds two context menus over an .md file.
 
-1. Backtick all ``$x^2$`` to ``$`x^2`$``
-1. Unbacktick all ``$`x^2`$`` to `$x^2$`
+1. Backtick all ``$x^2$`` to ``$`x^2`$``, before pushing to GitHub
+1. Unbacktick all ``$`x^2`$`` to `$x^2$`, for PDF
 
 ## Packaging
 Packaged with `vsce package --allow-missing-repository` command.
