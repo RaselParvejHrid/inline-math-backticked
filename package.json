@@ -1,0 +1,39 @@
+{
+    "name": "inline-math-backticked",
+    "displayName": "Inline Math Backticked",
+    "version": "1.0.0",
+    "publisher": "raselparvej",
+    "engines": {
+        "vscode": "^1.70.0"
+    },
+    "main": "./extension.js",
+    "activationEvents": [
+        "onLanguage:markdown"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "InlineMath.backtick",
+                "title": "Inline Math Backticked: Insert Backtick"
+            },
+            {
+                "command": "InlineMath.unbacktick",
+                "title": "Inline Math Backticked: Remove Backtick"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "InlineMath.backtick",
+                    "when": "editorTextFocus && resourceLangId == markdown",
+                    "group": "1_modification"
+                },
+                {
+                    "command": "InlineMath.unbacktick",
+                    "when": "editorTextFocus && resourceLangId == markdown",
+                    "group": "1_modification"
+                }
+            ]
+        }
+    }
+}
