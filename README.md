@@ -19,7 +19,7 @@ So, I wrote this extension, to quickly move between these versions.
 ## Features
 It adds two context menus over an .md file.
 
-1. `Insert Backtick`: Backtick all ``$x^2$`` to ``$`x^2`$``, for me, before pushing to GitHub.
+1. `Insert Backticks`: Backtick all ``$x^2$`` to ``$`x^2`$``, for me, before pushing to GitHub.
 1. `Remove Backticks`: Unbacktick all ``$`x^2`$`` to `$x^2$`, for me, before conversion to PDF.
 
 ## Packaging
