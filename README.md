@@ -10,7 +10,7 @@
 1. Enjoy.
 
 ## Context
-Inline MathJax on a markdown (`.md`) file, like `$x^2$` does not render, on GitHub, when it's a part of an Hyperlink TOC Entry. But I noticed ``$`x^2`$`` works just fine, while GitHub even hides backticks, which is desirable.
+Inline MathJax on a markdown (`.md`) file, like `$x^2$`, does not render, on GitHub, when it's a part of an Hyperlink TOC Entry. But I noticed ``$`x^2`$`` works just fine, while GitHub even hides backticks, which is desirable.
 
 But my `.md to .pdf converter` does not hide backticks on exported PDF Documents.
 
