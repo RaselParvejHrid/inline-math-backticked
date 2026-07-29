@@ -25,7 +25,11 @@ It adds two context menus over an .md file.
 ## Packaging
  This extension is packaged into a `.vsix` file with this command:
  
-```vsce package --allow-missing-repository```
+```bash
+vsce package --allow-missing-repository
+```
 
 To install `vsce`:
-```npm install -g @vscode/vsce```
+```bash
+npm install -g @vscode/vsce
+```
