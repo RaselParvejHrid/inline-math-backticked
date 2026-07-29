@@ -2,7 +2,7 @@
 
 ## How to use it?
 
-1. Download `inline-math-backticked.vsix`.
+1. Download `inline-math-backticked.vsix`, from the latest commit.
 1. Open the `Extensions` Panel in `VS Code`.
 1. Click on the three-dot `(...)` icon.
 1. Select `Install from VSIX...` menu.
@@ -10,19 +10,22 @@
 1. Enjoy.
 
 ## Context
-On GitHub, Inline MathJax (like `$x^2$`) does not render, when it's a part of an Hyperlink TOC Entry. But I noticed ``$`x^2`$`` works fine, even backticks are not visible on GitHub page.
+Inline MathJax on a markdown (`.md`) file, like `$x^2$` does not render, on GitHub, when it's a part of an Hyperlink TOC Entry. But I noticed ``$`x^2`$`` works just fine, while GitHub even hides backticks, which is desirable.
 
-But, I do not want backticks on my PDF.
+But my `.md to .pdf converter` does not hide backticks on exported PDF Documents.
 
 So, I wrote this extension, to quickly move between these versions.
 
 ## Features
 It adds two context menus over an .md file.
 
-1. Backtick all ``$x^2$`` to ``$`x^2`$``, before pushing to GitHub
-1. Unbacktick all ``$`x^2`$`` to `$x^2$`, for PDF
+1. `Insert Backtick`: Backtick all ``$x^2$`` to ``$`x^2`$``, for me, before pushing to GitHub.
+1. `Remove Backticks`: Unbacktick all ``$`x^2`$`` to `$x^2$`, for me, before conversion to PDF.
 
 ## Packaging
-Packaged with `vsce package --allow-missing-repository` command.
+ This extension is packaged into a `.vsix` file with this command:
+ 
+```vsce package --allow-missing-repository```
 
-To install `vsce`: `npm install -g @vscode/vsce`.
+To install `vsce`:
+```npm install -g @vscode/vsce```
