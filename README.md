@@ -2,7 +2,7 @@
 
 ## How to use it?
 
-1. Download `inline-math-backticked.vsix`, from the latest release from `Releases` section on GitHub.
+1. Download `inline-math-backticked.vsix`.
 1. Open the `Extensions` Panel in `VS Code`.
 1. Click on the three-dot `(...)` icon.
 1. Select `Install from VSIX...` menu.
@@ -10,7 +10,7 @@
 1. Enjoy.
 
 ## Context
-On GitHub, Inline MathJax (like `$x^2$`) does not render, when it's a part of an Hyperlink TOC Entry. But I noticed ``$`x^2`$`` works fine.
+On GitHub, Inline MathJax (like `$x^2$`) does not render, when it's a part of an Hyperlink TOC Entry. But I noticed ``$`x^2`$`` works fine, even backticks are not visible on GitHub page.
 
 But, I do not want backticks on my PDF.
 
