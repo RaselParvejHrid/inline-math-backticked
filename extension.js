@@ -1,38 +1,47 @@
 const vscode = require('vscode');
 
 function activate(context) {
-    // Option 1: Convert $x^2$ to $`x^2`$
+    // Option 1: Convert $x^2$ to $`x^2`$, keeping $$ math untouched
     let convertToBacktick = vscode.commands.registerCommand('InlineMath.backtick', async () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) return;
+
         const document = editor.document;
         const text = document.getText();
+        // Negative lookbehind (?<!\$) and negative lookahead (?!\$) strictly ignore double-dollar $$
+        const regex = /(?<!\$)\$([^$`\r\n]+)\$(?!\$)/g;
 
-        // Replaces inline $math$ with $`math`$, skipping $$ block math and existing $`math`$
-        const updatedText = text.replace(/(?<!\$)\$([^$`\n]+)\$(?!\$)/g, '$`$1`$');
+        await editor.edit(editBuilder => {
+            let match;
+            while ((match = regex.exec(text)) !== null) {
+                const startPos = document.positionAt(match.index);
+                const endPos = document.positionAt(match.index + match[0].length);
+                const range = new vscode.Range(startPos, endPos);
 
-        const fullRange = new vscode.Range(
-            document.positionAt(0),
-            document.positionAt(text.length)
-        );
-        await editor.edit(editBuilder => editBuilder.replace(fullRange, updatedText));
+                editBuilder.replace(range, `$\`${match[1]}\`$`);
+            }
+        });
     });
 
-    // Option 2: Convert $`x^2`$ to $$
+    // Option 2: Convert $`x^2`$to$$
     let convertToBlock = vscode.commands.registerCommand('InlineMath.unbacktick', async () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) return;
+
         const document = editor.document;
         const text = document.getText();
+        const regex = /\$`([^`\r\n]+)`\$/g;
 
-        // Replaces inline $`math`$ with block $$ math $$
-        const updatedText = text.replace(/\$`([^`\n]+)`\$/g, '$$\n$1\n$$');
+        await editor.edit(editBuilder => {
+            let match;
+            while ((match = regex.exec(text)) !== null) {
+                const startPos = document.positionAt(match.index);
+                const endPos = document.positionAt(match.index + match[0].length);
+                const range = new vscode.Range(startPos, endPos);
 
-        const fullRange = new vscode.Range(
-            document.positionAt(0),
-            document.positionAt(text.length)
-        );
-        await editor.edit(editBuilder => editBuilder.replace(fullRange, updatedText));
+                editBuilder.replace(range, `$${match[1]}$`);
+            }
+        });
     });
 
     context.subscriptions.push(convertToBacktick, convertToBlock);
