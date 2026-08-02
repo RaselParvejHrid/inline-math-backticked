@@ -1,8 +1,8 @@
-# Inline Math Backticked | A VS Code Extension
+# Markdown Math Utilities | A VS Code Extension
 
 ## How to use it?
 
-1. Download `inline-math-backticked.vsix`, from the latest commit.
+1. Download `markdown-math-utilities-2.0.0.vsix`, from the latest commit.
 1. Open the `Extensions` Panel in `VS Code`.
 1. Click on the three-dot `(...)` icon.
 1. Select `Install from VSIX...` menu.

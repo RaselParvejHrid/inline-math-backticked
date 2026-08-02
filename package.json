@@ -1,7 +1,7 @@
 {
-    "name": "inline-math-backticked",
-    "displayName": "Inline Math Backticked",
-    "version": "1.0.0",
+    "name": "markdown-math-utilities",
+    "displayName": "Markdown Math Utilities",
+    "version": "2.0.0",
     "publisher": "raselparvej",
     "engines": {
         "vscode": "^1.70.0"
@@ -13,23 +13,50 @@
     "contributes": {
         "commands": [
             {
-                "command": "InlineMath.backtick",
-                "title": "Inline Math Backticked: Insert Backtick"
+                "command": "MarkdownMath.backtickInlines",
+                "title": "Markdown Math: Backtick Inlines"
             },
             {
-                "command": "InlineMath.unbacktick",
-                "title": "Inline Math Backticked: Remove Backtick"
+                "command": "MarkdownMath.unbacktickInlines",
+                "title": "Markdown Math: Unbacktick Inlines"
+            },
+            {
+                "command": "MarkdownMath.doubleDollarToMathFence",
+                "title": "Markdown Math:  $$ to ```math"
+            },
+            {
+                "command": "MarkdownMath.MathFenceToDoubleDollar",
+                "title": "Markdown Math: ```math to $$"
+            },
+            {
+                "command": "MarkdownMath.addTheIgnoreComment",
+                "title": "Markdown Math: Ignore"
             }
         ],
         "menus": {
             "editor/context": [
                 {
-                    "command": "InlineMath.backtick",
+                    "command": "MarkdownMath.backtickInlines",
                     "when": "editorTextFocus && resourceLangId == markdown",
                     "group": "1_modification"
                 },
                 {
-                    "command": "InlineMath.unbacktick",
+                    "command": "MarkdownMath.unbacktickInlines",
+                    "when": "editorTextFocus && resourceLangId == markdown",
+                    "group": "1_modification"
+                },
+                {
+                    "command": "MarkdownMath.doubleDollarToMathFence",
+                    "when": "editorTextFocus && resourceLangId == markdown",
+                    "group": "1_modification"
+                },
+                {
+                    "command": "MarkdownMath.MathFenceToDoubleDollar",
+                    "when": "editorTextFocus && resourceLangId == markdown",
+                    "group": "1_modification"
+                },
+                {
+                    "command": "MarkdownMath.addTheIgnoreComment",
                     "when": "editorTextFocus && resourceLangId == markdown",
                     "group": "1_modification"
                 }
