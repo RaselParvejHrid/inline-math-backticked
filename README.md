@@ -1,4 +1,4 @@
-# Markdown Math Utilities | A VS Code Extension
+# Markdown Math Utilities 2.0.0 | A VS Code Extension
 
 ## How to use it?
 
@@ -17,10 +17,13 @@ But my `.md to .pdf converter` does not hide backticks on exported PDF Documents
 So, I wrote this extension, to quickly move between these versions.
 
 ## Features
-It adds two context menus over an .md file.
+It adds five context menus over an .md file.
 
-1. `Insert Backticks`: Backtick all ``$x^2$`` to ``$`x^2`$``, for me, before pushing to GitHub.
-1. `Remove Backticks`: Unbacktick all ``$`x^2`$`` to `$x^2$`, for me, before conversion to PDF.
+1. `Backtick Inlines`: Backtick all ``$x^2$`` to ``$`x^2`$``, for me, before pushing to GitHub.
+2. `Unbacktick Inlines`: Unbacktick all ``$`x^2`$`` to `$x^2$`, for me, before conversion to PDF.
+3. ``$$ to ```math``
+4. `` ```math to $$``
+5. `Ignore`: Add a comment at the cursor position or just before the selected inline/block MathJax or Code Fence to ignore using during conversions.
 
 ## Packaging
  This extension is packaged into a `.vsix` file with this command:
